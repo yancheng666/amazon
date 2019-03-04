@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c3p0-config>
+  <default-config>
+   	<!-- name是属性名，值写在标签之间 -->
+
+
+<property name="driverClass">com.mysql.jdbc.Driver</property>
+
+<property name="jdbcUrl">jdbc:mysql:///store_v1.0</property>
+
+<property name="user">root</property>
+
+<property name="password">123456</property>
+  </default-config>
+
+  <!-- 指定配置 -->
+
+-<named-config name="oracle">
+
+<property name="driverClass">com.mysql.jdbc.Driver</property>
+
+<property name="jdbcUrl">jdbc:mysql:///store_v1.0</property>
+
+<property name="user">root</property>
+
+<property name="password">ROOT</property>
+
+</named-config>
+</c3p0-config>

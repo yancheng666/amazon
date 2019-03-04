@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.amazon.bean">
+   <class name="AmazonOrders" table="Orders">
+     <id name="oid" column="oid">
+         <generator class="native"></generator>
+     </id>
+     <property name="ordertime" column="ordertime"></property>
+     <property name="total" column="total"></property>
+     <property name="state" column="state"></property>
+     <property name="address" column="address"></property>
+     <property name="name" column="name"></property>
+     <property name="telephone" column="telephone"></property>
+     <property name="uid" column="uid"></property>
+     <many-to-one name="user" column="uid" class="AmazonUser"></many-to-one>
+     <list name="orderItems" table="orderItems">
+         <key column="itemid"></key>
+         <list-index column="idx"></list-index>
+         <element column="AmazonOrderItem" type="AmazonOrderItem"></element>
+     </list>
+   </class>
+ 
+ 
+ 
+ </hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.amazon.bean">
+  <class name="AmazonCart" table="Cart">
+     <id name="C_id" column="C_id">
+       <generator class="native"></generator>
+     </id>
+  <map name="map" table="t_map">
+     <key column="C_id"></key>
+     <map-key type="string" column="mapKey"></map-key>
+     <one-to-many class="AmazonCartItem"/>
+  </map>
+   
+  
+  </class>
+
+
+
+</hibernate-mapping>    

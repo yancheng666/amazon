@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+     <!-- 必选配置
+      #hibernate.dialect org.hibernate.dialect.MySQLDialect
+			注意： 如果没有特殊需求制定，方言使用通用版
+			
+	  #hibernate.connection.driver_class com.mysql.jdbc.Driver
+	  #hibernate.connection.url jdbc:mysql:///test
+	  #hibernate.connection.username gavin
+	  #hibernate.connection.password 
+      -->
+     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+     <property name="hibernate.connection.url">jdbc:mysql:///hbm_crm6</property>
+	 <property name="hibernate.connection.username">root</property>
+	 <property name="hibernate.connection.password">123456</property>
+   
+   <!-- 方言 -->
+   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+   
+   <!-- 可选配置 
+				#hibernate.show_sql true		是否展示SQL语句，false不展示，true展示
+				#hibernate.format_sql true		是否格式化sql语句，false 不格式化，  true 格式化
+   -->
+   
+   <property name="hibernate.show_sql">true</property>
+   <property name="hibernate.format_sql">true</property>
+   
+   <!-- 
+			## auto schema export    自动导出并构建表
+			#hibernate.hbm2ddl.auto create			自动建表，且会删除之前的数据(测试阶段)
+			#hibernate.hbm2ddl.auto create-drop		自动建表，创建好后，立刻删除(测试阶段)
+			#hibernate.hbm2ddl.auto update			自动建表，如果表已存在，只会更新表数据，而不会覆盖表
+			#hibernate.hbm2ddl.auto validate		校验，如果没有表，报错，不会自动建表
+   -->
+   
+   <property name="hibernate.hbm2ddl.auto">update</property>
+   
+   <!-- 映射文件路径 -->
+   
+   <mapping resource="com/amazon/bean/AmazonAdmin.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonCart.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonCartItem.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonCategory.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonOrderItem.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonOrders.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonProduct.hbm.xml"/>
+   <mapping resource="com/amazon/bean/AmazonUser.hbm.xml"/>
+   </session-factory>
+
+
+
+
+</hibernate-configuration>
